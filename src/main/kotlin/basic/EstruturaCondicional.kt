@@ -274,6 +274,41 @@ fun main() {
         else -> println("$num é um número desconhecido")
     }
 
+    // Exemplo 21 - Usando if no println
+    // Expressão -> println(if(condicao) "Sim" else "Não")
+
+
+    // 21.1 Idade maior/menor
+    val quantoAnos = 0
+    println("Pode votar - ${if(quantoAnos >= 16) "SIM" else "NÃO"}")
+
+    // 21.2 Par ou Impar
+    val valorNumerico = 10
+    println("Número $valorNumerico é ${if(valorNumerico % 2 == 0) "PAR" else "IMPAR"}")
+
+    // 21.3 Nota Aprovado/Reprovado - utilizando listOf
+    val notas = listOf(7.5, 2.4, 8.9, 5.5)
+    notas.forEach { nota -> println("Nota: $nota | Status: ${if(nota >= 6.0) "APROVADO" else "REPROVADO"}") }
+
+    // 21.4 Frutas Verificando tamanho das palavras das frutas - utilizando mutableListOf
+    val listasDefrutas = mutableListOf("Maçã", "Banana", "Laranja")
+
+    listasDefrutas.forEach { fruta ->
+        println("Fruta: $fruta - Tamanho: ${fruta.length} - ${if(fruta.length > 5) "LONGa" else "curta"}")
+    }
+
+
+    // Exemplo 22  - Múltiplas Condições usando if no println
+    val temperaturaTermica = 25
+    println("Clima: ${if(temperaturaTermica > 30) "QUENTE"
+                      else if(temperaturaTermica < 15) "FRIO"
+                      else "AMENO"}")
+
+    // Exemplo 23  - Com it em forEach usando if no println
+    val listaDeNumeros = listOf(1, 2, 3, 4)
+    listaDeNumeros.forEach {
+        println("$it é ${if(it % 2 == 0) "PAR" else "ÍMPAR"}")
+    }
 }
 
 /*
