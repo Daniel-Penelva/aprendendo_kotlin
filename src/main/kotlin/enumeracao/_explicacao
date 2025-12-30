@@ -1,0 +1,43 @@
+O que é uma enum class?
+
+É uma classe que representa um conjunto fixo e conhecido de valores.
+
+Ideal quando:
+    - Os valores são poucos
+    - Não há variação de estrutura
+    - Cada valor representa um estado simples
+
+enum class = Lista de opções pré-definidas
+    - Valores IMUTÁVEIS
+    - Cada constante = objeto único
+    - when() exaustivo automático
+
+-----------
+
+Exemplo: Enum - DiaSemana
+Exemplo simples utilizando when exaustivo automático
+
+-----------
+
+Exemplo: Enum - Prioridade
+Exemplo com propriedades e métodos (Construtor personalizado)
+    - Cada prioridade tem um nível numérico associado
+    - Método para comparar prioridades
+
+-----------
+
+Exemplo: Enum - FormaDePagamento
+Exemplo com funções associadas
+    - Função para calcular desconto baseado na forma de pagamento
+    - enum class com métodos
+
+-----------
+
+Exemplo: Enum - Status
+Exemplos simples de uso em funções e propriedades
+    - Função que retorna mensagem baseada no status
+    - Uso em estruturas de controle
+    - Uso em coleções (listas, mapas)
+    - name e ordinal
+
+
