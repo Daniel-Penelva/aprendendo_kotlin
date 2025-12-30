@@ -1,0 +1,27 @@
+1. Classe Pessoa
+Analisa a forma Simples de uma estrutura de classe. Mostra como utilizar a instância para criação de objetos e modificação de valores de atributos.
+
+--------------
+2. Classe Funcionario
+Analisa a utilização de constructores primários e a diferença entre val e var.
+
+--------------
+3. Classe Departamento
+Analisa a utilização do bloco de inicialização (init) e as funções require, check e assert.
+
+--------------
+4. Classe Produto
+Analisa tipos de uso de construtores secundários que é uma maneira de mais de uma forma de criação de objetos.
+
+--------------
+5. Classe Usuario
+Analisa o uso do padrão Factory Method para substituir o construtor. Esse padrão é usado em métodos nomeados que criam objetos.
+
+Também analisa o uso do companion object equivale ao método estáticos do Java. Permite definir membros que pertencem à classe, e não as instancias.
+Podem conter propriedades e métodos.
+
+Também analisa o uso de métodos (função) dentro da classe.
+
+--------------
+6. Classe Animal
+Analisa o uso de encapsulamento (Getter e Setter) para o controle de acesso aos atributos (aos dados) de uma classe.
