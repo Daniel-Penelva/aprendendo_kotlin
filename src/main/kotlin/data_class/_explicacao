@@ -1,0 +1,23 @@
+data class em Kotlin
+O que é uma data class?
+
+É uma classe focada em representar dados, não comportamento.
+
+Ela gera automaticamente:
+    - toString()
+    - equals()
+    - hashCode()
+    - copy()
+    - componentN() (para destructuring)
+
+Tudo isso sem escrever código extra.
+
+data class = Classe normal + superpoderes automáticos
+Ideal para: models, APIs, banco de dados
+NÃO use para: lógica de negócio complexa
+
+
+Regras obrigatórias de uma data class - Regras que o compilador exige:
+    - Deve ter pelo menos um parâmetro no construtor primário
+    - Os parâmetros devem ser val ou var
+    - Não pode ser abstract, open, sealed ou inner
