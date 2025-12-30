@@ -1,0 +1,18 @@
+Visibilidade em Kotlin
+
+Kotlin tem 4 modificadores de visibilidade:
+
+Modificador	          Onde é visível
+ public	           Em qualquer lugar (padrão)
+ private	       Apenas no mesmo arquivo ou classe
+ internal	       Dentro do mesmo módulo
+ protected	       Na classe e nas subclasses
+
+
+ Comparação de visibilidade:
+
+ Modificador	Classe Pai	Subclasse	Mesmo Arquivo (não herda)	Outro Projeto
+ public	           OK          OK                 OK                     OK
+ protected	       OK          OK                 X                      X
+ internal	       OK          OK           OK (mesmo módulo)	         X
+ private	       OK          X                  X                      X
