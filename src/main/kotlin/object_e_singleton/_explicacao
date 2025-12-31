@@ -1,0 +1,95 @@
+object e Singleton em Kotlin
+O que é object?
+
+Em Kotlin, object cria uma única instância da classe automaticamente. É a forma nativa e thread-safe de
+implementar o padrão Singleton, sem boilerplate.
+
+Conceitos-chave:
+    - object = Classe + Instância única + Lazy initialization
+    - 1 única instância na JVM
+    - Thread-safe automático
+    - Sem construtor público
+    - É o Singleton nativo da linguagem
+    - Não precisa de static, new ou padrões verbosos
+
+---------------------------------------------------------------------------------------------------------------------
+
+Comparando Object VS. Class Normal
+
+            << Class Normal - (múltiplas instâncias) >>
+            código:
+
+            class ConfigNormal {
+                companion object {
+                    fun getInstance() = ConfigNormal()
+                }
+            }
+            val c1 = ConfigNormal()  // Nova instância
+            val c2 = ConfigNormal()  // NOVA instância! (c1 != c2)
+
+---------------------------------------------------------------------------------------------------------------------
+            << object - (SÓ UMA instância) >>
+            codigo:
+
+            object ConfigObjeto
+            val o1 = ConfigObjeto    // Mesma instância
+            val o2 = ConfigObjeto    // MESMA instância! (o1 === o2)
+
+
+---------------------------------------------------------------------------------------------------------------------
+Diferença: object vs companion object
+
+object	                       companion object
+Singleton global	          Singleton da classe
+Nome próprio	              Associado à classe
+Acessado direto	              Acessado via classe
+Pode existir sozinho	      Existe dentro de uma classe
+
+---------------------------------------------------------------------------------------------------------------------
+Comparação Completa
+
+Tipo	            Instâncias	     Thread-safe	 Uso
+object	             1 única	         ok	       Singletons globais
+companion object	 1 por classe	     ok	       Factory methods
+class normal	     Múltiplas	         x	       Objetos normais
+
+---------------
+
+exemplo 1 - object Configuracao
+Este é um exemplo básico singleton automatico - geração de uma única instância.
+
+---------------
+
+exemplo 2 - object Contador
+O uso do object com estado global. Vale ressaltar que pode dificultar testes.
+
+---------------
+
+exemplo 3 - object GerenciarMensagem
+Aqui mostra como funciona o object como implementação de interface. Ou seja, um singleton que implementa uma interface.
+
+---------------
+
+exemplo 4 - propriedade object eventoListener
+Usando object para implementar listeners ou callbacks globais. Aqui, object dentro de classe é usado para definir um
+listner singleton para todos os objetos da classe.
+
+---------------
+
+exemplo 5 - companion object (Singleton classe Usuario)
+Esse exemplo mostra como usar companion object para criar um singleton associado a uma classe.
+
+---------------
+
+exemplo 6 - companion object com interface (Classe Produto - Interface Factory<T>)
+Esse exemplo mostra como usar companion object para implementar uma interface factory, criando um singleton associado a uma classe.
+
+---------------
+
+exemplo 7 - companion object com data class Animal
+Esse exemplo mostra como usar companion object dentro de uma data class para fornecer métodos utilitários relacionados à classe.
+
+---------------
+
+exemplo 8 - object com data class Cor
+Esse exemplo mostra como usar object para criar um singleton que fornece métodos utilitários relacionados a uma data class.
