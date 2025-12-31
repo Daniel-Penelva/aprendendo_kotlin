@@ -1,0 +1,12 @@
+abstract class em Kotlin
+
+O que é uma abstract class?
+O abstract class é uma classe que não pode ser instanciada diretamente e serve como base para subclasses. Pode ter métodos abstratos
+(sem implementação), métodos concretos e estado (propriedades).
+
+É uma classe que:
+    - Não pode ser instanciada: new Animal() // Erro
+    - Pode conter estado (propriedades)
+    - Pode ter métodos implementados e abstratos
+    - Construtor
+    - Serve como base comum para subclasses
