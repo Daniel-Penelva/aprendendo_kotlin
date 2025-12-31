@@ -1,0 +1,8 @@
+O que é uma interface?
+
+É um contrato: define o que uma classe deve fazer, não como (na maior parte).
+
+Em Kotlin, interfaces:
+    - Não têm estado
+    - Podem ter implementações padrão
+    - Podem ter propriedades abstratas
