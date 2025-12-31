@@ -1,0 +1,29 @@
+sealed interface em Kotlin
+
+O sealed interface combina sealed class com interface, permitindo múltiplas implementações de uma hierarquia restrita.
+Introduzida no Kotlin 1.5, é perfeita para contratos type-safe sem estado compartilhado.
+
+O que é uma sealed interface?
+
+É uma interface selada, ou seja:
+    - Define um contrato
+    - Restringe quem pode implementá-la
+    - O compilador conhece todas as implementações possíveis
+
+Junta o melhor de:
+    - interface
+    - sealed class
+
+
+Por que ela existe?
+Antes, tinha que escolher:
+    - sealed class (sem herança múltipla)
+    - interface (sem controle de implementações)
+A sealed interface resolve isso.
+
+
+Regra de visibilidade
+As implementações:
+    - Devem estar no mesmo pacote
+    - Ou no mesmo arquivo
+    - Assim o compilador conhece todas.
