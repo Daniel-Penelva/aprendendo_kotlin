@@ -1,0 +1,33 @@
+Herança em Kotlin
+Princípio básico
+
+Nada é herdável por padrão em Kotlin.
+
+Isso é proposital para evitar heranças perigosas.
+
+Portanto, herança permite que uma classe filha herde propriedades e métodos de uma classe pai. Em Kotlin, classes são
+final por padrão (não herdáveis) - use open para permitir herança.
+
+Use:
+    open - permite herança e também permite sobreescrever métodos e propriedades
+    override - é obrigatório (é explicito) e indica que um método ou propriedade está sendo sobrescrito
+
+Bom saber:
+Não existe herança multipla - por exemplo:
+
+    open class A
+    open class B
+    class C : A(), B()
+ATENÇÃO!!! ISSO NÃO EXISTE
+
+MAS com interfaces pode - por exemplo:
+
+    interface A
+    interface B
+    class C : A, B
+
+Quando usar herança (regra prática)
+
+    - Relação “é um” (Cachorro é um Animal)
+    - Há comportamento comum forte
+    - Pouca variação estrutural
