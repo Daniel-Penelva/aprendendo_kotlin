@@ -1,0 +1,27 @@
+sealed abstract class em Kotlin
+
+O que é uma sealed abstract class?
+O sealed abstract class não existe como termo específico no Kotlin. Toda sealed class é implicitamente abstract. O sealed já inclui a restrição de
+herança + abstração automática.
+
+É uma classe que combina duas ideias:
+
+abstract -> não pode ser instanciada, define comportamento base
+
+sealed → restringe quem pode herdar dela (conjunto fechado)
+
+Resultado:
+Uma hierarquia fechada, com estado + lógica compartilhada, e controle total das variações possíveis.
+
+Por que usar isso?
+Você usa sealed abstract class quando:
+    - Quer forçar subclasses específicas
+    - Precisa de estado e métodos base
+    - Quer when exhaustivo sem else
+    - Está modelando domínio / regras de negócio
+
+sealed class = abstract class + hierarquia restrita
+    - Implicitamente abstract (não instanciável)
+    - Subclasses só no MESMO arquivo
+    - Estado compartilhado permitido
+    - when() exaustivo
