@@ -1,0 +1,11 @@
+Delegation (by) em Kotlin
+O que é Delegation?
+Delegation permite que uma classe "empreste" métodos/propriedades de outra classe usando by. É uma forma elegante de composição sobre herança.
+
+Delegation é quando uma classe repassa (delegates) a implementação de uma interface para outro objeto.
+
+Em vez de:
+    - herdar comportamento
+    - ou reescrever métodos
+
+Compõe e usa by.
