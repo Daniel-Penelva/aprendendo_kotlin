@@ -1,6 +1,4 @@
-package interfaces
-
-import javax.swing.text.html.HTML.Tag.I
+package generics
 
 // =========================
 // MODELO BASE

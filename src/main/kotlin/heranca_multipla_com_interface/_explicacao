@@ -1,0 +1,62 @@
+Herança múltipla com uso de Interface e Classe
+
+Regra importante:
+Kotlin não permite herança múltipla de classes, mas permite:
+    - Herdar uma classe
+    - Implementar quantas interfaces quiser
+
+Isso evita o famoso Diamond Problem das classes.
+
+
+Estrutura básica:
+    class MinhaClasse : ClasseBase(), Interface1, Interface2
+
+
+EXEMPLO COMPLETO (com conflito de método)
+Vou criar:
+* Uma classe base `Funcionario`
+* Duas interfaces `Trabalhador` e `Estudante`
+* Ambas terão um método com mesmo nome
+* Vai ser resolvido o conflito usando `super<Interface>`
+
+
+O que está acontecendo aqui?
+    Estagiario:
+
+    - Herdou comportamento da classe `Funcionario`
+    - Herdou comportamento de `Trabalhador`
+    - Herdou comportamento de `Estudante`
+    - Precisou resolver conflito porque:
+
+      - `rotina()` existe em duas interfaces
+      - `apresentar()` existe na classe e nas interfaces
+
+
+Sintaxe importante
+    super<NomeDaInterface>.metodo()
+Isso escolhe explicitamente qual implementação usar.
+
+
+Por que isso funciona?
+Porque interfaces em Kotlin:
+
+    - Podem ter implementação
+    - Não possuem estado (não armazenam dados concretos)
+    - São mais seguras que herança múltipla de classes
+
+
+O que NÃO é permitido
+
+    open class A
+    open class B
+    class C : A(), B() // ERRO
+
+Kotlin permite apenas uma superclasse concreta.
+
+
+Resumo mental
+| Tipo               | Pode herdar múltiplos?|
+| ------------------ | ----------------------|
+| Class              |  Não                  |
+| Interface          |  Sim                  |
+| Class + Interfaces |  Sim                  |
