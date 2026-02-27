@@ -1,0 +1,58 @@
+
+Polimorfismo com sealed class
+
+Isso é muito usado em Kotlin moderno.
+
+O que é sealed class?
+
+Uma sealed class é uma classe:
+
+    - Restrita
+    - Com número fechado de subclasses
+    - Conhecidas em tempo de compilação
+Ela é perfeita para representar estados, resultados, eventos, tipos controlados.
+
+
+Por que ela é poderosa para polimorfismo?
+Porque:
+    - Você pode tratar tudo como o tipo base
+    - O `when` sabe todos os tipos possíveis
+    - Não precisa de `else`
+    - O compilador garante segurança
+Isso é polimorfismo controlado.
+
+
+O que está acontecendono exemplo?
+`Resultado` é o tipo base.
+
+Mas em tempo de execução pode ser:
+    - Resultado.Sucesso
+    - Resultado.Erro
+    - Resultado.Carregando
+Isso é polimorfismo.
+
+
+Quando usar sealed class?
+    - Representar estados (UI, network, loading)
+    - Modelar respostas de API
+    - Fluxos controlados
+    - Substituir enums quando precisa de dados
+    - Sistemas de eventos
+
+sealed class vs enum class
+
+| sealed class                  | enum class        |
+| ----------------------------- | ----------------- |
+| Pode ter dados diferentes     | Estrutura fixa    |
+| Pode ter subclasses complexas | Apenas constantes |
+| Mais flexível                 | Mais simples      |
+
+
+Conclusão
+Polimorfismo com `sealed class` é:
+    - Seguro
+    - Controlado
+    - Muito usado em backend e Android
+    - Melhor alternativa para muitos `if/else`
+
+

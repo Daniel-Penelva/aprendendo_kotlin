@@ -1,0 +1,57 @@
+Polimorfismo Paramétrico (Generics)
+
+O que é Polimorfismo Paramétrico?
+
+É quando o comportamento é definido de forma genérica, podendo funcionar com vários tipos diferentes, sem precisar duplicar código.
+
+Em vez de:
+    fun imprimirInt(valor: Int) { }
+    fun imprimirString(valor: String) { }
+    fun imprimirDouble(valor: Double) { }
+
+
+É feito:
+    fun <T> imprimir(valor: T) { }
+
+
+EXEMPLO COMPLETO
+Criando um pequeno sistema genérico de repositório.
+
+O que está acontecendo?
+
+`Repositorio<T>` funciona para:
+    - Repositorio<Usuario>
+    - Repositorio<Produto>
+    - Repositorio<Int>
+    - Qualquer tipo
+
+O mesmo código se adapta ao tipo passado.
+
+Isso é Polimorfismo Paramétrico.
+
+O que o `<T>` significa?
+
+`T` é um parâmetro de tipo.
+Pode usar qualquer nome:
+
+    class Caixa<Tipo>
+    class Caixa<E>
+    class Caixa<X>
+
+
+Por convenção:
+
+| Letra | Significado comum |
+| ----- | ----------------- |
+| T     | Type              |
+| E     | Element           |
+| K     | Key               |
+| V     | Value             |
+
+Resumo Final
+
+Polimorfismo Paramétrico é:
+    - Definir comportamento genérico
+    - Adaptável a múltiplos tipos
+    - Seguro em tempo de compilação
+    - Muito usado em coleções, APIs e frameworks

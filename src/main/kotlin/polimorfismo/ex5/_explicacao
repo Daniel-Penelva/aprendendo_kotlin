@@ -1,0 +1,73 @@
+
+Polimorfismo por Sobrecarga (Overloading)
+O que é Overloading?
+
+É quando você tem múltiplas funções com o mesmo nome, mas:
+    - Parâmetros diferentes (tipo)
+    - Quantidade diferente
+    - Ordem diferente
+
+O compilador decide qual função chamar em tempo de compilação.
+
+Isso é chamado de:
+    > Polimorfismo estático (compile-time polymorphism)
+
+
+Regra importante
+Para ser sobrecarga válida, a assinatura precisa mudar.
+A assinatura é composta por:
+
+    nome + parâmetros (tipo/ordem/quantidade)
+ATENÇÃO! ️ O tipo de retorno NÃO conta para diferenciar.
+
+
+O que NÃO é permitido
+Isso dá erro:
+    fun somar(a: Int, b: Int): Int { return a + b }
+    fun somar(a: Int, b: Int): Double { return (a + b).toDouble() } // ERRO
+Porque só mudou o tipo de retorno.
+
+
+Overloading + Default Parameters
+
+Em Kotlin, muitas vezes você nem precisa sobrecarregar:
+
+```kotlin
+fun criarUsuario(nome: String, idade: Int = 0) {
+    println("Nome: $nome, Idade: $idade")
+}
+```
+
+Uso:
+
+```kotlin
+criarUsuario("Ana")
+criarUsuario("Carlos", 25)
+```
+
+Isso substitui dois métodos sobrecarregados.
+
+DICA! Kotlin incentiva isso.
+
+
+Comparação:
+    Overloading
+    Mesmo nome, parâmetros diferentes.
+
+    Overriding
+    Mesma assinatura, comportamento redefinido em herança.
+
+
+Resumo
+
+| Tipo        | Decidido em | Usa herança?|
+| ----------- | ----------- | ------------|
+| Overloading | Compilação  |  Não        |
+| Overriding  | Execução    |  Sim        |
+
+
+Quando usar Overloading?
+    - APIs claras
+    - Operações matemáticas
+    - Métodos utilitários
+    - Construtores com diferentes formas de criação

@@ -1,0 +1,65 @@
+O que é Polimorfismo?
+Polimorfismo** significa:
+
+> "Muitas formas"
+
+Na prática:
+Um mesmo tipo base pode representar diferentes comportamentos.
+
+
+Em Kotlin, polimorfismo acontece principalmente com:
+
+* `open class` + `override`
+* `abstract class`
+* `interface`
+* `sealed class`
+
+
+A ideia central:
+Você trabalha com o tipo base, mas o comportamento executado depende do objeto real.
+Isso é chamado de:
+    - Polimorfismo dinâmico
+    - Dynamic dispatch
+
+
+O que acontece aqui?
+Mesmo chamando:
+    pagamento.processar()
+
+O Kotlin executa:
+    - CartaoCredito.processar()
+    - Boleto.processar()
+    - Pix.processar()
+
+Dependendo do objeto real - Isso é polimorfismo.
+
+
+Visualização mental
+
+Pagamento (tipo base)
+     ↑
+     |
+---------------------------------
+|           |           |
+Cartao    Boleto      Pix
+
+
+Você trata tudo como `Pagamento`, mas o comportamento muda.
+
+Atenção importante
+
+Polimorfismo só funciona se:
+    - Método da classe base for `open`
+    - Subclasse usar `override`
+Caso contrário, não há despacho dinâmico.
+
+
+Vantagens do Polimorfismo:
+    - Código mais flexível
+    - Fácil extensão
+    - Segue o princípio OCP (Open/Closed Principle)
+    - Reduz if/when gigantes
+
+
+Frase importante:
+    > Polimorfismo permite tratar objetos diferentes de forma uniforme.

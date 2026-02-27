@@ -1,0 +1,3 @@
+Exemplo com restrição de tipo (Bounded Generic)
+
+Significa que T deve ser Animal ou subtipo.
