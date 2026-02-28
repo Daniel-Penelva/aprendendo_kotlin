@@ -113,6 +113,21 @@ fun main() {
         return n * fatorial(n - 1)
     }
 
+    // Exemplo 16 - Exemplificando funções simples
+
+    fun soma(a: Int, b: Int): Int {
+        return a + b
+    }
+
+    // Versão Curta (expressão única)
+    fun somaCurta(a: Int, b: Int) = a + b
+
+    // Parâmetros com valor padrão - não existe em Java
+    fun saudar(nome: String, mensagem: String = "Olá") {
+        println("$mensagem, $nome!")
+    }
+
+
 
     /* ============================== // ============================== */
     // Chamando as funções
@@ -157,4 +172,11 @@ fun main() {
 
     println(fatorial(5)) // 120
 
+    val valorFinal = soma(10, 20)
+    println("Valor da Soma: $valorFinal")
+
+    println("Expressão curta ${ somaCurta(15, 25)}")
+
+    saudar("João")              // "Olá, João!"
+    saudar("João", "Bem-vindo") // "Bem-vindo, João!"
 }
