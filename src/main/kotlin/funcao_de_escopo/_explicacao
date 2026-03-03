@@ -1,0 +1,16 @@
+
+Scope Functions (Função de Escopo)
+
+São 5 funções que executam um bloco de código no contexto de um objeto. O que muda entre elas é como você acessa o objeto (`this` ou `it`) e o que
+elas retornam.
+
+Tabela de referência rápida:
+
+| Função | Acessa objeto como |       Retorna      |
+| `let`  | `it`               | resultado do bloco |
+| `apply`| `this`             | o próprio objeto   |
+| `run`  | `this`             | resultado do bloco |
+| `also` | `it`               | o próprio objeto   |
+| `with` | `this`             | resultado do bloco |
+
+

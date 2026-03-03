@@ -10,7 +10,7 @@ fun main() {
 
     nomes.forEach { nome ->
         nome.let {
-            val nomeMaiusculo = it.uppercase()
+            val nomeMaiusculo = it.uppercase() // it é o nome atual do loop
             println(nomeMaiusculo)
         }
     }
@@ -31,6 +31,19 @@ fun main() {
         println("Estou aprendendo ${it.uppercase()}")  // ou simplesmente println("Estou aprendendo $it")
     }
 
+
+    // Outro exemplo 'let' usando nulllable ou para transformar
+    val name: String? = "daniel"
+
+    // Sem let - verboso
+    if (name != null) {
+        println(name.uppercase())
+    }
+
+    // Com let - elegante
+    name?.let {
+        println(it.uppercase())  // "it" é o name
+    }
 
     /* <<<<<<<<<<<<<<<<<<<<<<<<<< Exemplo 2 - run >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     // Usa this | Retorna o resultado do bloco | Usado para inicialização ou rodar blocos de código dependentes do objeto
@@ -89,7 +102,6 @@ fun main() {
     }
     println("Lista de Números: $listaNumeros")
 
-
     /* <<<<<<<<<<<<<<<<<<<<<<<<<< Exemplo 4 - also >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     // Usa it | Retorna o proprio objeto | Usado para efeitos colaterais (log, debug, validações)
 
@@ -116,6 +128,7 @@ fun main() {
 
     /* <<<<<<<<<<<<<<<<<<<<<<<<<< Exemplo 5 - with >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     // Usa this | Retorna o resultado do bloco | Não é chamada como extensão — é uma função comum
+    // use quando o objeto não é nullable e você quer executar várias operações sobre ele sem precisar retornar o próprio objeto.
 
     // Usando 'with' para operar em um objeto StringBuilder
     val resultado = with(StringBuilder()) {
@@ -155,6 +168,8 @@ fun main() {
 /*
 * As funções de escopo são um dos recursos mais importantes e usados em Kotlin.
 * Elas ajudam a escrever código mais limpo, reduz repetição e melhora legibilidade.
+* São cinco funções que executam um bloco de código no contexto de um objeto. O que muda entre elas é como você acessa
+* o objeto (this ou it) e o que elas retornam (o próprio objeto ou o resultado do bloco).
 * As principais são:
 *   - let (Retorno - Resultado de bloco) | this ou it | encadeamento, evitar null, transformação | Ex: Quero usar o valor (it) e obter outro valor.
 *   - run (Retorno - Resultado de bloco) |    it      | inicializações, blocos de código         | Ex: Quero usar o objeto (this) e retornar algo.
